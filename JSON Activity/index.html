@@ -4,23 +4,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="/JSON Activity/styleforJson.css">
+  <link rel="stylesheet" href="styleforJson.css">
   <title>JSON Implemented Website</title>
 </head>
 <body>
+
+    <script>
+        const characters = [
+            //Character 1
+            {
+                name: "Kyojuro, Rengoku",
+                title: "Flame Hashira",
+                gender: "Male",
+                age: 24,
+                appearance: "Fiery Appearance, with red eyes, orange flowing hair that symbolizes fire.",
+                background: "BACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUND"
+            }
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("character-name").textContent = characters[0].name;
+            document.getElementById("character-title"). textContent = characters[0].title;
+            document.getElementById("character-gender"). textContent = characters[0].gender;
+            document.getElementById("character-age"). textContent = characters[0].age;
+            document.getElementById("character-appearance"). textContent = characters[0].appearance;
+            document.getElementById("character-background"). textContent = characters[0].background;
+        });
+    </script>
     <section class="Navbar">
         <nav class="navbar nav-color navbar-expand-lg sticky-top">
             <div class="container my-3">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-5">
-                    <li><a href="https://musufflemuchii.github.io">Home</a></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li><a href="https://musufflemuchii.github.io" class="text-decoration-none">Home</a></li>
                 </ul>
             </div>
         </nav>
     </section>
-    <section class="Starting-Page"></section>
+    <section class="Starting-Page">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-4">
+                    <div class="card">
+                        <!--Title Above Picture-->
+                        <div class="h1 my-5 text-center">Character Info</div>
+                        
+                        <!--Picture-->
+                        <div class="picture">
+                            <img src="" alt="">
+                        </div>
+
+                        <!--Character Name Title-->
+                        <div class="h4 text-center" id="character-name">Character Name</div>
+
+                        <!--Small Description for Character-->
+                        <div class="p text-center mb-5" id="character-title">Character Title</div>
+                    </div>
+                </div>
+
+                <div class="col-8">
+                    <div class="card">
+
+                        <!--Title-->
+                        <div class="h5 my-5 text-center">Information</div>
+
+                        <!--Appearance-->
+
+                        <!--Background-->
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="Lower-Page"></section>
     <section class="Lowest-Page"></section>
 </body>
