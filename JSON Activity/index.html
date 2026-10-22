@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="styleforJson.css">
+  <link rel="stylesheet" href="../JSON Activity/assets/styleforJson.css">
   <title>JSON Implemented Website</title>
 </head>
 <body>
@@ -16,19 +16,21 @@
                 name: "Kyojuro, Rengoku",
                 title: "Flame Hashira",
                 gender: "Male",
-                age: 24,
-                appearance: "Fiery Appearance, with red eyes, orange flowing hair that symbolizes fire.",
-                background: "BACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUNDBACKGROUND"
+                image: "assets/image/Rengoku.png",
+                appearance: "Kyojuro was a young man of tall stature and lean-muscular build, with fair skin. He had long, somewhat messy and bright yellow hair that flared out around his face, with red streaks akin to flames along with two shoulder-length bangs, two chin-length bangs on the side of his head, and wore a messily ponytail behind his head. He had black forked eyebrows and golden eyes that turns to red around the irises with white pupils. He was known to be charismatic and had an air of great optimism, having an enthusiastic smile plastered on his face nearly all the time. Kyojuro wore the standard Demon Slayer Corps uniform, which is black in the manga and tinted a deep brown in the anime. It consisted of a brown button-up jacket with a stand-up collar and long sleeves, featuring gold buttons and a shirt pocket on the left breast, with the kanji for Destroy (滅 Metsu?) engraved on the back of the uniform. Beneath the jacket, he wore a white long-sleeved collared undershirt. His uniform was fastened with a white belt at the waist and included traditional tattsuke-hakama pants of matching color. Over this, Kyojuro wore a striking haori draped on his shoulders like a cape, with a white-to-yellow gradient pattern and red flame-like ridges at the end. This haori originally belonged to his father, Shinjuro Rengoku, and was more than likely worn by him when he served as the Flame Hashira before Kyojuro inherited the role. For legwear, he wore a pair of red kyahan decorated with yellow flame motifs rising from the bottom up, brown tabi socks, and a pair of white zōri sandals with red straps.",
+                background: "Kyojuro was greatly enthusiastic in regard to his duties as a Hashira, and often came across as cheerfully eccentric. He was amiable, pure of heart, boasting extraordinary technique and swordsmanship stemming from strict practice and discipline. He was an honorable warrior who adhered to his code of morals and principles instilled into him by his mother at a young age; the most significant being his belief that those who were born strong have a duty to protect the weak."
             }
         ];
 
         document.addEventListener("DOMContentLoaded", () => {
-            document.getElementById("character-name").textContent = characters[0].name;
-            document.getElementById("character-title"). textContent = characters[0].title;
-            document.getElementById("character-gender"). textContent = characters[0].gender;
-            document.getElementById("character-age"). textContent = characters[0].age;
-            document.getElementById("character-appearance"). textContent = characters[0].appearance;
-            document.getElementById("character-background"). textContent = characters[0].background;
+            const character = characters[0];
+            const characterImage = document.getElementById("character-image");
+            characterImage.src = character.image;
+            characterImage.alt = character.name;
+            document.getElementById("character-name").textContent = character.name;
+            document.getElementById("character-title").textContent = character.title;
+            document.getElementById("character-appearance").textContent = character.appearance;
+            document.getElementById("character-background").textContent = character.background;
         });
     </script>
     <section class="Navbar">
@@ -50,7 +52,7 @@
                         
                         <!--Picture-->
                         <div class="picture">
-                            <img src="" alt="">
+                            <img id="character-image" class="mb-3 rounded-circle d-block mx-auto character-image" alt="Character Picture">
                         </div>
 
                         <!--Character Name Title-->
@@ -65,11 +67,19 @@
                     <div class="card">
 
                         <!--Title-->
-                        <div class="h5 my-5 text-center">Information</div>
+                        <div class="h3 my-5 text-center">Information</div>
 
                         <!--Appearance-->
+                        <div class="container">
+                            <div class="h4">Appearance:</div>
+                            <div class="p mb-5" id="character-appearance">Appearance</div>
+                        </div>
 
-                        <!--Background-->
+                        <!--Description-->
+                        <div class="container">
+                            <div class="h4">Background:</div>
+                            <div class="p mb-5" id="character-background">Background Information</div>
+                        </div>
                     </div>
                     
                 </div>
