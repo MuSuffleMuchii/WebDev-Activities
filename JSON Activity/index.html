@@ -31,13 +31,35 @@
             document.getElementById("character-title").textContent = character.title;
             document.getElementById("character-appearance").textContent = character.appearance;
             document.getElementById("character-background").textContent = character.background;
+
+            const galleryImages = [
+                { title: "Indomitable Will", image: "assets/image/Indomitable Will.png" },
+                { title: "Kyojuro Portrait", image: "assets/image/Kyojuro Portrait.png" },
+                { title: "Blazing Personality", image: "assets/image/Kyojuro.png" },
+                { title: "To Protect the Weak", image: "assets/image/Promise.png" }
+            ];
+            const gallery = document.getElementById("gallery-images");
+
+            for (let index = 0; index < galleryImages.length; index++) {
+                const galleryImage = galleryImages[index];
+                gallery.innerHTML += `
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card h-100">
+                            <img src="${galleryImage.image}" class="card-img-top gallery-image" alt="${galleryImage.title}">
+                            <div class="card-body">
+                                <h2 class="h5 card-title text-center mb-0">${galleryImage.title}</h2>
+                            </div>
+                        </div>
+                    </div>`;
+            }
         });
+        
     </script>
     <section class="Navbar">
         <nav class="navbar nav-color navbar-expand-lg sticky-top">
             <div class="container my-3">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-5">
-                    <li><a href="https://musufflemuchii.github.io" class="text-decoration-none">Home</a></li>
+                    <li><a href="https://musufflemuchii.github.io" class="text-decoration-none fw-bold text-light">Home</a></li>
                 </ul>
             </div>
         </nav>
@@ -48,7 +70,7 @@
                 <div class="col-4">
                     <div class="card">
                         <!--Title Above Picture-->
-                        <div class="h1 my-5 text-center">Character Info</div>
+                        <div class="h1 my-5 text-center fw-bold">Demon Slayer:</div>
                         
                         <!--Picture-->
                         <div class="picture">
@@ -86,7 +108,18 @@
             </div>
         </div>
     </section>
-    <section class="Lower-Page"></section>
+    <section class="Lower-Page">
+        <div class="container my-5">
+            <div class="card">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="h1 text-center my-5">Gallery</div>
+                    </div>
+                    <div class="row g-3 px-5 pb-5" id="gallery-images"></div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="Lowest-Page"></section>
 </body>
 </html>
